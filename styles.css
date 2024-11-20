@@ -1,0 +1,42 @@
+/* Base styles */
+body {
+    font-family: 'Manrope', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.t-body {
+    background-color: #ffffff;
+}
+
+.t-records {
+    opacity: 1;
+    transition: opacity ease-in-out .2s;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    margin: 0 0 1rem;
+}
+
+/* Layout */
+.t-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Responsive */
+@media screen and (max-width: 980px) {
+    .t-records {
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .t-container {
+        padding: 0 10px;
+    }
+}

@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SweDev - Разработка ботов</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Roboto:wght@700&family=Inter:wght@700,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="description" content="Разрабатываем решения для оптимизации бизнеса: от создания приложений до внедрения ИИ" />
+    <meta property="og:url" content="https://deepai.ru" />
+    <meta property="og:title" content="DeepAI" />
+    <meta property="og:description" content="Разрабатываем решения для оптимизации бизнеса: от создания приложений до внедрения ИИ" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://static.tildacdn.com/tild6634-3439-4631-b063-656236326531/badge_deep.png" />
+    <link rel="canonical" href="https://deepai.ru">
+    
+    <!-- Favicon and Apple Touch Icons -->
+    <link rel="shortcut icon" href="https://static.tildacdn.com/tild3739-3139-4665-b934-646561633332/favicon_6.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="https://static.tildacdn.com/tild3535-6635-4630-a436-353335346366/152.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://static.tildacdn.com/tild3535-6635-4630-a436-353335346366/152.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://static.tildacdn.com/tild3535-6635-4630-a436-353335346366/152.png">
+    
+    <!-- Microsoft Tile -->
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="msapplication-TileImage" content="https://static.tildacdn.com/tild3334-3234-4238-b432-303162363362/270deep.png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" type="text/css" />
+    <link rel="stylesheet" href="styles.css" type="text/css" />
+    
+    <!-- Analytics -->
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(92924231, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/92924231" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+        window.dataLayer = window.dataLayer || [];
+        window.mainTracker = 'gtag';
+        window.gtagTrackerID = 'G-HRCF3F0SJJ';
+        function gtag(){dataLayer.push(arguments);}
+        setTimeout(function(){
+            (function(w,d,s,i){
+                var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s);
+                j.async=true;
+                j.src='https://www.googletagmanager.com/gtag/js?id='+i;
+                f.parentNode.insertBefore(j,f);
+                gtag('js', new Date());
+                gtag('config',i,{});
+            })(window,document,'script',window.gtagTrackerID);
+        }, 2000);
+    </script>
+</head>
+<body>
+    <div class="hero">
+        <header>
+            <nav>
+                <div class="logo-container">
+                    <div class="logo">SweDev</div>
+                    <div class="logo-subtitle">swensi</div>
+                </div>
+                <div class="nav-features">
+                    <ul class="main-menu">
+                        <li><a href="#services" data-tooltip="Наши услуги">
+                            <i class="fas fa-cube"></i>
+                            <span>Услуги</span>
+                        </a></li>
+                        <li><a href="#projects" data-tooltip="Наше портфолио">
+                            <i class="fas fa-briefcase"></i>
+                            <span>Портфолио</span>
+                        </a></li>
+                        <li><a href="#contact" data-tooltip="Свяжитесь с нами">
+                            <i class="fas fa-envelope"></i>
+                            <span>Контакты</span>
+                        </a></li>
+                    </ul>
+                    <div class="settings-container">
+                        <button class="settings-toggle" aria-label="Настройки">
+                            <i class="fas fa-cog"></i>
+                        </button>
+                        <div class="settings-dropdown">
+                            <div class="settings-menu">
+                                <div class="settings-header">
+                                    <h3>Настройки</h3>
+                                    <button class="close-settings">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
+                                <div class="settings-content">
+                                    <div class="setting-item">
+                                        <label>Размер шрифта</label>
+                                        <div class="font-controls">
+                                            <button class="decrease-font">A-</button>
+                                            <button class="increase-font">A+</button>
+                                        </div>
+                                    </div>
+                                    <div class="setting-item">
+                                        <label>Анимации</label>
+                                        <input type="checkbox" checked>
+                                    </div>
+                                    <div class="setting-item">
+                                        <label>Язык</label>
+                                        <select class="language-select">
+                                            <option value="ru">Русский</option>
+                                            <option value="en">English</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <div class="hero-content">
+                <h1 data-lang="hero.title">Профессиональная веб-разработка</h1>
+                <p data-lang="hero.subtitle">Создаем современные сайты, мобильные приложения и умных ботов для вашего бизнеса</p>
+                <a href="#contact" class="cta-button" data-lang="hero.cta">Заказать бота</a>
+            </div>
+        </header>
+    </div>
+
+    <section id="services" class="services-section">
+        <div class="services-container">
+            <h2 class="section-title" data-lang="services.title">Наши услуги</h2>
+            <p class="section-description" data-lang="services.subtitle">Создаем инновационные решения для вашего бизнеса</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Разработка ботов</h3>
+                        <p>Создаем умных ботов для автоматизации бизнес-процессов и улучшения коммуникации с клиентами</p>
+                        <ul class="service-features">
+                            <li>Чат-боты для поддержки</li>
+                            <li>Интеграция с CRM</li>
+                            <li>Автоматизация продаж</li>
+                        </ul>
+                        <a href="#contact" class="service-button">Подробнее</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Веб-разработка</h3>
+                        <p>Разрабатываем современные веб-сайты и приложения с учетом последних технологий и трендов</p>
+                        <ul class="service-features">
+                            <li>Адаптивный дизайн</li>
+                            <li>Высокая производительность</li>
+                            <li>SEO-оптимизация</li>
+                        </ul>
+                        <a href="#contact" class="service-button">Подробнее</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Мобильные приложения</h3>
+                        <p>Создаем нативные и кроссплатформенные мобильные приложения для iOS и Android</p>
+                        <ul class="service-features">
+                            <li>Современный UI/UX</li>
+                            <li>Высокая производительность</li>
+                            <li>Push-уведомления</li>
+                        </ul>
+                        <a href="#contact" class="service-button">Подробнее</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>AI решения</h3>
+                        <p>Внедряем искусственный интеллект для оптимизации и автоматизации бизнес-процессов</p>
+                        <ul class="service-features">
+                            <li>Машинное обучение</li>
+                            <li>Обработка данных</li>
+                            <li>Предиктивная аналитика</li>
+                        </ul>
+                        <a href="#contact" class="service-button">Подробнее</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Аналитика данных</h3>
+                        <p>Помогаем компаниям принимать решения на основе глубокого анализа данных</p>
+                        <ul class="service-features">
+                            <li>Бизнес-аналитика</li>
+                            <li>Визуализация данных</li>
+                            <li>Статистический анализ</li>
+                        </ul>
+                        <a href="#contact" class="service-button">Подробнее</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Облачные решения</h3>
+                        <p>Разрабатываем и внедряем масштабируемые облачные решения для бизнеса</p>
+                        <ul class="service-features">
+                            <li>Облачная инфраструктура</li>
+                            <li>Миграция данных</li>
+                            <li>Оптимизация затрат</li>
+                        </ul>
+                        <a href="#contact" class="service-button">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="section-heading-container">
+            <h2 class="section-heading">Наши проекты</h2>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-number">01</div>
+                <div class="project-content">
+                    <h3 class="project-title">Разработка чат-ботов</h3>
+                    <p class="project-description">Создание умных чат-ботов для автоматизации коммуникации с клиентами</p>
+                    <ul class="project-features">
+                        <li>Интеграция с CRM системами</li>
+                        <li>Обработка естественного языка</li>
+                        <li>Автоматизация поддержки</li>
+                    </ul>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">NLP</span>
+                        <span class="tech-tag">API</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-number">02</div>
+                <div class="project-content">
+                    <h3 class="project-title">Веб-приложения</h3>
+                    <p class="project-description">Разработка современных веб-приложений с отзывчивым дизайном</p>
+                    <ul class="project-features">
+                        <li>Адаптивный интерфейс</li>
+                        <li>Высокая производительность</li>
+                        <li>SEO оптимизация</li>
+                    </ul>
+                    <div class="project-tech">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">MongoDB</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-number">03</div>
+                <div class="project-content">
+                    <h3 class="project-title">Мобильные приложения</h3>
+                    <p class="project-description">Создание нативных и кроссплатформенных мобильных приложений</p>
+                    <ul class="project-features">
+                        <li>iOS и Android разработка</li>
+                        <li>Оптимизация производительности</li>
+                        <li>Пользовательский опыт</li>
+                    </ul>
+                    <div class="project-tech">
+                        <span class="tech-tag">Flutter</span>
+                        <span class="tech-tag">React Native</span>
+                        <span class="tech-tag">Firebase</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-number">04</div>
+                <div class="project-content">
+                    <h3 class="project-title">AI решения</h3>
+                    <p class="project-description">Внедрение искусственного интеллекта в бизнес-процессы</p>
+                    <ul class="project-features">
+                        <li>Машинное обучение</li>
+                        <li>Анализ данных</li>
+                        <li>Предиктивная аналитика</li>
+                    </ul>
+                    <div class="project-tech">
+                        <span class="tech-tag">TensorFlow</span>
+                        <span class="tech-tag">PyTorch</span>
+                        <span class="tech-tag">Scikit-learn</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-number">05</div>
+                <div class="project-content">
+                    <h3 class="project-title">Облачные решения</h3>
+                    <p class="project-description">Разработка и внедрение облачных сервисов</p>
+                    <ul class="project-features">
+                        <li>Масштабируемая архитектура</li>
+                        <li>Безопасность данных</li>
+                        <li>Оптимизация затрат</li>
+                    </ul>
+                    <div class="project-tech">
+                        <span class="tech-tag">AWS</span>
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">Kubernetes</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-number">06</div>
+                <div class="project-content">
+                    <h3 class="project-title">Кибербезопасность</h3>
+                    <p class="project-description">Обеспечение безопасности и защиты данных</p>
+                    <ul class="project-features">
+                        <li>Аудит безопасности</li>
+                        <li>Защита от угроз</li>
+                        <li>Мониторинг систем</li>
+                    </ul>
+                    <div class="project-tech">
+                        <span class="tech-tag">Security</span>
+                        <span class="tech-tag">Encryption</span>
+                        <span class="tech-tag">Monitoring</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews" class="reviews">
+        <h2 class="section-title">Отзывы наших клиентов</h2>
+        <div class="reviews-grid">
+            <div class="reviews-grid-inner">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <img src="https://i.pravatar.cc/150?img=68" alt="Alex Pro">
+                        </div>
+                        <div class="testimonial-info">
+                            <h3>Alex Pro</h3>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Отличная работа! Бот работает идеально, все функции выполняются без ошибок. Очень доволен результатом, буду обращаться еще!"</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <img src="https://i.pravatar.cc/150?img=59" alt="WOLF HUNTER">
+                        </div>
+                        <div class="testimonial-info">
+                            <h3>WOLF HUNTER</h3>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">Ребята сделали крутой сайт для моего бизнеса. Особенно порадовала админка - всё просто и понятно. Клиенты теперь сами записываются через сайт, а мне приходят уведомления. Спасибо за работу!</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <img src="https://i.pravatar.cc/150?img=12" alt="MAGA PRO">
+                        </div>
+                        <div class="testimonial-info">
+                            <h3>MAGA PRO</h3>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">Заказал телеграм бота для доставки еды. Сделали даже лучше, чем я ожидал. Клиенты довольны, заказов стало больше. Отдельное спасибо за понятную статистику и отчёты по продажам.</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <img src="https://i.pravatar.cc/150?img=3" alt="DARK WARRIOR">
+                        </div>
+                        <div class="testimonial-info">
+                            <h3>DARK WARRIOR</h3>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">Делали мне сайт-визитку и бота для автосервиса. Всё работает как часы. Клиенты записываются через бота, а сайт приводит новых клиентов. Цена адекватная, работают быстро.</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <img src="https://i.pravatar.cc/150?img=15" alt="PHANTOM X">
+                        </div>
+                        <div class="testimonial-info">
+                            <h3>PHANTOM X</h3>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">Заказывал бота для своего игрового сообщества. Функционал огромный - и статистика, и рейтинги, и мини-игры. Всё работает стабильно, без багов. Очень доволен результатом!</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <img src="https://i.pravatar.cc/150?img=33" alt="SHADOW UMP">
+                        </div>
+                        <div class="testimonial-info">
+                            <h3>SHADOW UMP</h3>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">Ребята сделали бота для нашего спортивного клуба. Теперь запись на тренировки автоматическая, бот сам напоминает клиентам о занятиях. Очень удобно и практично!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2>Свяжитесь с нами</h2>
+        <div class="contact-container">
+            <div class="social-links">
+                <a href="http://t.me/swensi17" target="_blank" class="social-card">
+                    <div class="social-icon">
+                        <i class="fab fa-telegram"></i>
+                    </div>
+                    <div class="social-info">
+                        <h3>Telegram</h3>
+                        <p>Мгновенная связь</p>
+                        <span class="social-detail">Ответ в течение 5 минут</span>
+                    </div>
+                </a>
+                <a href="https://github.com/swensi17" target="_blank" class="social-card">
+                    <div class="social-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <div class="social-info">
+                        <h3>GitHub</h3>
+                        <p>Открытый код</p>
+                        <span class="social-detail">100+ публичных проектов</span>
+                    </div>
+                </a>
+                <a href="https://instagram.com/relaxi.7" target="_blank" class="social-card">
+                    <div class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <div class="social-info">
+                        <h3>Instagram</h3>
+                        <p>Жизнь автора</p>
+                        <span class="social-detail">Ежедневные обновления</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="additional-info">
+        <div class="info-grid">
+            <div class="info-grid-inner">
+                <div class="info-card">
+                    <i class="fas fa-clock"></i>
+                    <h4>Режим работы</h4>
+                    <p>24/7 поддержка</p>
+                    <span>Работаем без выходных</span>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-rocket"></i>
+                    <h4>Скорость</h4>
+                    <p>Быстрая разработка</p>
+                    <span>От 3-х дней</span>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>Гарантии</h4>
+                    <p>100% результат</p>
+                    <span>Поддержка после сдачи</span>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-code"></i>
+                    <h4>Технологии</h4>
+                    <p>Современный стек</p>
+                    <span>Передовые решения</span>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-sync"></i>
+                    <h4>Обновления</h4>
+                    <p>Постоянная поддержка</p>
+                    <span>Бесплатные апдейты</span>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h4>Адаптивность</h4>
+                    <p>Все устройства</p>
+                    <span>ПК, планшеты, телефоны</span>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <h4>Оптимизация</h4>
+                    <p>Высокая скорость</p>
+                    <span>Быстрая загрузка</span>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-paint-brush"></i>
+                    <h4>Дизайн</h4>
+                    <p>Уникальный стиль</p>
+                    <span>Современный подход</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="logo-container">
+                <div class="logo">SweDev</div>
+                <div class="logo-subtitle">swensi</div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://static.tildacdn.com/js/jquery-1.10.2.min.js"></script>
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+    <script src="scripts.js"></script>
+    <script src="src/app.js"></script>
+    <script src="js/counter.js"></script>
+</body>
+</html>
