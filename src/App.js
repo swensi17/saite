@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react';
 import './App.scss';
 import { Container } from '@mui/material';
 import { motion } from 'framer-motion';
-import { TelegramIcon, GitHubIcon, InstagramIcon } from '@mui/icons-material';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import SendIcon from '@mui/icons-material/Send';
 
 function App() {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
@@ -467,7 +469,7 @@ function App() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <TelegramIcon />
+                <SendIcon />
               </motion.a>
               <motion.a
                 href="#"

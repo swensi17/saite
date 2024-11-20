@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box, Typography, Container, Button } from '@mui/material';
 import { motion } from 'framer-motion';
+import SocialIcons from './SocialIcons';
 
 const Hero = () => {
   return (
@@ -54,15 +55,14 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
         >
           <Typography
-            variant="h2"
+            variant="h5"
             sx={{
-              fontSize: { xs: '1.5rem', md: '2rem' },
               mb: 4,
               color: '#fff',
-              opacity: 0.9,
+              maxWidth: '600px',
             }}
           >
-            Автоматизация бизнес-процессов с помощью современных технологий
+            Создаем умных ботов для вашего бизнеса
           </Typography>
         </motion.div>
 
@@ -76,21 +76,20 @@ const Hero = () => {
             size="large"
             href="#contact"
             sx={{
-              mt: 2,
               backgroundColor: '#61dafb',
-              padding: '12px 32px',
-              fontSize: '1.2rem',
+              color: '#282c34',
               '&:hover': {
-                backgroundColor: '#4fa8c7',
-                transform: 'translateY(-2px)',
-                boxShadow: '0 5px 15px rgba(97, 218, 251, 0.4)',
+                backgroundColor: '#4fa8d3',
               },
-              transition: 'all 0.3s ease',
             }}
           >
-            Связаться со мной
+            Связаться с нами
           </Button>
         </motion.div>
+
+        <Box sx={{ mt: 4 }}>
+          <SocialIcons />
+        </Box>
       </Container>
     </Box>
   );
